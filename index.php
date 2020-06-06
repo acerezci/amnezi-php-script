@@ -10,10 +10,10 @@ $dateTime = new DateTime();
 
 if($_GET){
     $lat = $_GET['lat'];
-    $lat = $_GET['long'];
+    $long = $_GET['long'];
 
-    $firebase->push(DEFAULT_PATH . '/location/lat', $lat);
-    $firebase->push(DEFAULT_PATH . '/location/long', $long);
+    $firebase->push(DEFAULT_PATH . '/location/lat'. $lat);
+    $firebase->push(DEFAULT_PATH . '/location/long'. $long);
 }
 
 ?>
