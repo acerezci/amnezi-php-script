@@ -25,7 +25,7 @@ $dateTime = new DateTime();
 // --- reading the stored string ---
 // $name = $firebase->get(DEFAULT_PATH . '/name/contact001');
 
-if($_POST){
+if($_GET){
     $lat = $_GET['lat'];
 
     $firebase->push(DEFAULT_PATH . '/name/erkanyarraki', $lat);
