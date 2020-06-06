@@ -10,20 +10,25 @@ print("HELLO AQ");
 $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
 
 // --- storing an array ---
-$test = [
-    'foo' => 'bar',
-    'i_love' => 'lamp',
-    'id' => 42
-];
+// $test = [
+//     'foo' => 'bar',
+//     'i_love' => 'lamp',
+//     'id' => 42
+// ];
 $dateTime = new DateTime();
-$masd = $firebase->set(DEFAULT_PATH . '/' . $dateTime->format('c'), $test);
-print_r($masd);
+// $firebase->set(DEFAULT_PATH . '/' . $dateTime->format('c'), $test);
 
 
 // --- storing a string ---
-$firebase->push(DEFAULT_PATH . '/name/contact001', 'John Doe');
+// $firebase->push(DEFAULT_PATH . '/name/contact001', 'John Doe');
 
 // --- reading the stored string ---
-$name = $firebase->get(DEFAULT_PATH . '/name/contact001');
+// $name = $firebase->get(DEFAULT_PATH . '/name/contact001');
+
+if($_POST){
+    $lat = $_GET['lat'];
+
+    $firebase->push(DEFAULT_PATH . '/name/erkanyarraki', $lat);
+}
 
 ?>
