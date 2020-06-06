@@ -8,12 +8,12 @@ const DEFAULT_PATH = '/firebase/example';
 $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
 $dateTime = new DateTime();
 
+print("HELLO");
+
 if($_GET){
     $lat = $_GET['lat'];
-    $long = $_GET['long'];
 
     $firebase->push(DEFAULT_PATH . '/location/lat'. $lat);
-    $firebase->push(DEFAULT_PATH . '/location/long'. $long);
 }
 
 ?>
